@@ -1,0 +1,52 @@
+{
+  "name": "capture_the_paiza",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": "https://github.com/gi-no/tools",
+  "author": "yukimura1227  <hiroyuki.takamura@gi-no.jp>",
+  "license": "MIT",
+  "scripts": {
+    "pack": "build --mac --x64 && build --win --x64 --ia32 && build --linux --x64",
+    "pack:osx": "build --mac --x64",
+    "pack:win": "build --win --x64 --ia32",
+    "pack:linux": "build --linux --x64"
+  },
+  "dependencies": {
+    "fs-extra": "^7.0.0",
+    "imagemin": "^5.3.1",
+    "imagemin-pngquant": "^5.1.0",
+    "json-parse-async": "^1.0.3",
+    "pixelmatch": "^4.0.2",
+    "puppeteer": "^1.6.0"
+  },
+  "build": {
+    "asar": false,
+    "appId": "com.electron.capture_the_paiza",
+    "mac": {
+      "target": [
+        "zip",
+        "dmg"
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "deb",
+      "category": "Development"
+    },
+    "directories": {
+      "output": "distribution"
+    },
+    "files": [
+      "**/*",
+      "!diff/",
+      "!test_result/",
+      "!origin/"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^2.0.5",
+    "electron-builder": "^20.22.0"
+  }
+}

@@ -1,0 +1,4 @@
+# bulding
+```
+yarn run pack
+```

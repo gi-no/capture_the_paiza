@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>caputure the paiza</title>
+</head>
+<body>
+  <section>
+    <h2>設定変更</h2>
+    <div>
+      <button id="js-open-login-config">ログイン情報の設定ファイルを開く</button>
+      <br/>
+      ※ ログインが必要なページはログイン情報を設定してください。
+    </div>
+    <div>
+      <button id="js-open-url-list">スクショを撮るURLリストを編集する</button>
+    </div>
+    <div>
+      <button id="js-open-origin-directory">仕様画像のフォルダを開く</button>
+      <br/>
+      ※ ここに保存されている画像ファイルを元に、自動的に画像の差分を取得します
+      取得したスクリーンショットが問題なければ、ここにいれておくとよいです。
+    </div>
+  </section>
+  <section>
+    <h2>実行する</h2>
+    <div>
+      <button id="js-take-all-screenshot">スクショを撮る</button>
+      <br/>
+      ※ 実行には時間がかかります。下記のボタンより、結果画像のフォルダを開き
+      画像が全て保存されるまでお待ちください。
+    </div>
+  </section>
+  <section>
+    <h2>確認する</h2>
+    <div>
+      <button id="js-open-test_result-directory">結果画像のフォルダを開く</button>
+    </div>
+    <div>
+      <button id="js-open-diff-directory">差分画像のフォルダを開く</button>
+    </div>
+  </section>
+  <script>
+    const ipc = require('electron').ipcRenderer
+    const screen_shot_button = document.getElementById('js-take-all-screenshot')
+    screen_shot_button.addEventListener('click', (event) => {
+      ipc.send('take_screen_shots');
+    });
+    const open_origin_dir_button = document.getElementById('js-open-origin-directory')
+    open_origin_dir_button.addEventListener('click', (event) => {
+      ipc.send('open_origin_directory');
+    });
+    document.getElementById('js-open-login-config').addEventListener('click', (event) => {
+      ipc.send('open_login_config');
+    });
+    document.getElementById('js-open-url-list').addEventListener('click', (event) => {
+      ipc.send('open_url_list');
+    });
+    document.getElementById('js-open-test_result-directory').addEventListener('click', (event) => {
+      ipc.send('open_test_result_directory');
+    });
+    document.getElementById('js-open-diff-directory').addEventListener('click', (event) => {
+      ipc.send('open_diff_directory');
+    });
+  </script>
+</body>
+</html>

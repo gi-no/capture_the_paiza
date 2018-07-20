@@ -1,0 +1,38 @@
+{
+  "url_info_list": [
+    {
+      "url": "https://paiza.jp/",
+      "filename": "all_top.png"
+    }, {
+      "url": "https://paiza.jp/student",
+      "filename": "student_top.png"
+    }, {
+      "url": "https://paiza.jp/mail/change_complete",
+      "filename": "change_complete.png"
+    }, {
+      "url": "https://paiza.jp/user/withdraw",
+      "filename": "withdraw.png"
+    }, {
+      "url": "https://paiza.jp/user/withdrawal_questionnaire",
+      "filename": "withdrawal_questionnaire.png"
+    }, {
+      "url": "https://paiza.jp/user/withdrawal_complete",
+      "filename": "withdrawal_complete.png"
+    }, {
+      "url": "https://paiza.jp/cgc",
+      "filename": "cgc_top.png"
+    }, {
+      "url": "https://paiza.jp/moshijo",
+      "filename": "moshijo_top.png"
+    }, {
+      "url": "https://paiza.jp/paijo",
+      "filename": "paijo_top.png"
+    }, {
+      "url": "https://paiza.jp/ts/6",
+      "filename": "ts_6.png"
+    }, {
+      "url": "https://paiza.jp/poh/hatsukoi",
+      "filename": "poh8_top.png"
+    }
+  ]
+}
