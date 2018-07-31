@@ -4,7 +4,8 @@ platform:
 # Test against the latest version of this Node.js version
 environment:
   nodejs_version: "9"
-
+  GH_TOKEN:
+    secure: V4OQrLsQX7WM7Hk1spM8oduswvtpzHP7c3BEdei3OMYCrZ5rCNFMwhY0bf5Vug/f
 cache:
   - node_modules
   - '%APPDATA%\npm-cache'
