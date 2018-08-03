@@ -16,6 +16,7 @@
     "imagemin": "^5.3.1",
     "imagemin-pngquant": "^5.1.0",
     "json-parse-async": "^1.0.3",
+    "materialize-css": "^1.0.0-rc.2",
     "pixelmatch": "^4.0.2",
     "puppeteer": "^1.6.0"
   },
