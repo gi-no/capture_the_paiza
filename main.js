@@ -24,7 +24,7 @@ function createWindow() {
   if(global.mainWindow !== null ) {
     return;
   }
-  global.mainWindow = new BrowserWindow({width: 350, height: 600});
+  global.mainWindow = new BrowserWindow({width: 350, height: 700});
 
   global.mainWindow.loadURL('file://' + __dirname + '/index.html');
   global.mainWindow.webContents.session.clearCache(function() {});

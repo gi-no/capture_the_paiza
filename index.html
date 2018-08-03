@@ -3,43 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <title>caputure the paiza</title>
+  <link type="text/css" rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css"  media="screen,projection"/>
+  <style>
+    .w-100-per {
+      width: 100%;
+    }
+    .mt-10 {
+      margin-top: 10px;
+    }
+    .mb-10 {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-  <section>
-    <h2>設定変更</h2>
-    <div>
-      <button id="js-open-login-config">ログイン情報の設定ファイルを開く</button>
+  <div class="ui stackable container">
+    <div class="ui stacked segment mb-10">
+      <h4 class="ui header">設定変更</h4>
+      <button id="js-open-login-config" class="waves-effect waves-light btn w-100-per">ログイン情報の設定ファイルを開く</button>
       <br/>
       ※ ログインが必要なページはログイン情報を設定してください。
+      <button id="js-open-url-list" class="waves-effect waves-light btn w-100-per">スクショを撮るURLリストを編集する</button>
+      <div>
+        <button id="js-open-origin-directory" class="waves-effect waves-light btn w-100-per mt-10">仕様画像のフォルダを開く</button>
+        <br/>
+        ※ ここに保存されている画像ファイルを元に、自動的に画像の差分を取得します
+        <br/>
+        取得したスクリーンショットが問題なければ、ここにいれておくとよいです。
+      </div>
     </div>
-    <div>
-      <button id="js-open-url-list">スクショを撮るURLリストを編集する</button>
+    <div class="ui divider"></div>
+    <div  class="ui stacked segment mb-10">
+      <h4 class="ui header">実行する</h4>
+      <div class="ui stacked segment">
+        <div>
+          <button id="js-take-all-screenshot" class="waves-effect waves-light btn w-100-per">スクショを撮る</button>
+          <br/>
+          ※ 実行には時間がかかります。下記のボタンより、結果画像のフォルダを開き
+          画像が全て保存されるまでお待ちください。
+        </div>
+      </div>
     </div>
-    <div>
-      <button id="js-open-origin-directory">仕様画像のフォルダを開く</button>
-      <br/>
-      ※ ここに保存されている画像ファイルを元に、自動的に画像の差分を取得します
-      取得したスクリーンショットが問題なければ、ここにいれておくとよいです。
+    <div class="ui divider"></div>
+    <div  class="ui stacked segment">
+      <h4 class="ui header">確認する</h4>
+      <div>
+        <button id="js-open-test_result-directory" class="waves-effect waves-light btn w-100-per">結果画像のフォルダを開く</button>
+      </div>
+      <div>
+        <button id="js-open-diff-directory" class="waves-effect waves-light btn w-100-per mt-10">差分画像のフォルダを開く</button>
+      </div>
     </div>
-  </section>
-  <section>
-    <h2>実行する</h2>
-    <div>
-      <button id="js-take-all-screenshot">スクショを撮る</button>
-      <br/>
-      ※ 実行には時間がかかります。下記のボタンより、結果画像のフォルダを開き
-      画像が全て保存されるまでお待ちください。
-    </div>
-  </section>
-  <section>
-    <h2>確認する</h2>
-    <div>
-      <button id="js-open-test_result-directory">結果画像のフォルダを開く</button>
-    </div>
-    <div>
-      <button id="js-open-diff-directory">差分画像のフォルダを開く</button>
-    </div>
-  </section>
+  </div>
   <script>
     const ipc = require('electron').ipcRenderer
     const screen_shot_button = document.getElementById('js-take-all-screenshot')
@@ -63,5 +78,6 @@
       ipc.send('open_diff_directory');
     });
   </script>
+  <script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
 </body>
 </html>
