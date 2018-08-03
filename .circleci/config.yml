@@ -10,11 +10,11 @@ jobs:
       - restore_cache:
           key: projectname-{{ .Branch }}-{{ checksum "yarn.lock" }}
       - run:
-        name: node install[circle-ciのosxは、iosアプリのビルド用で、nodeは無いので、無理やりインストール]
-        command: brew install node
+          name: node install[circle-ciのosxは、iosアプリのビルド用で、nodeは無いので、無理やりインストール]
+          command: brew install node
       - run:
-        name: yarn install[circle-ciのosxは、iosアプリのビルド用で、nodeは無いので、無理やりインストール]
-        command: brew install yarn
+          name: yarn install[circle-ciのosxは、iosアプリのビルド用で、nodeは無いので、無理やりインストール]
+          command: brew install yarn
       - run:
           name: System information
           command: |
