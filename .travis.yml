@@ -1,0 +1,21 @@
+os:
+- osx
+- linux
+language: node_js
+cache:
+  yarn: true
+  directories:
+    - node_modules
+    - "$HOME/Library/Caches/electron"
+    - "$HOME/Library/Caches/electron-builder"
+node_js:
+  - '9'
+script:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]    ; then yarn run pack:osx  ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]  ; then yarn run pack:linux; fi
+branches:
+  only:
+    - master
+env:
+  global:
+    - secure: "Uueeifh0fyUjcIOiMVaWBJJdUtfcXw3Gr7DJIpmV9Aa/x52HMKjnYrgFkmkdLOE32++KZ/BoztA2Zm3eVpZAdVpNcyc95UmyONMYb2xIS0N64Ly7X+NgwUjPFB5/IFgbNakk6OkLnTBcWs6BD7DbhXk9Ha820Rv6l2tCf61pfG9+XUB6038ttwpmrQ0WULeHLm6S4rzKfj9dwH9igWLGd0Vm8H7u2FVxtT/i19YIycGYhCcKy6HuXrnL44w1YngDgZhkP8B/a0DamrvZlmo6+InoYHCoa2mBL0f8Eg1MWC+orKx0fFXUt4pcFge1O+0gDwsksetPygJNxmj6dNW1NJdAFo2Fcq7g/bb9puJHnPcnw+d9rtdcyBSHgAUcFxet4JigRj6BYIuoT7WRYWicMmQZx0g8WacL6iNInjB+zIs/oq6rHKAGmEDQ4ZKCaaOUV3SCkEercmt0UxTobj+ALuSga/5QK/gjUrlH6lbvWoWt1tBVBogd1qhddOavzWcjC4owqvV9NfUgEcHBBJaLhER4FWh/p7CI1F8cwY6iKqcz4932SQDR67yGQcsxVhcYe58b29bJD/w7vRH7FlZuUWvv+Ge1a1eMVvw2hGy3RHU3ZSLE5lUfa9Dg8/gp3cqp50v4x6gzc60LpSOTem3KknzgDqlhECASHAqAuByeWiA="
