@@ -2,13 +2,18 @@ version: 2
 jobs:
   build:
     working_directory: ~/workspace
-    docker:
-      - image: circleci/node:10.8.0-browsers
-
+    macos:
+      xcode: "8.3.3"
     steps:
       - checkout
       - restore_cache:
           key: projectname-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: node install
+          command: brew install node
+      - run:
+          name: yarn install
+          command: brew install yarn
       - run:
           name: System information
           command: |
