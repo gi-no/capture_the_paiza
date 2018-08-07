@@ -18,6 +18,7 @@ async function login(user_id, password) {
   await page.type('#password',PASSWORD);
   const submit_button = await page.$('#regist_btn');
   await submit_button.click();
+  await page.close();
 }
 
 async function take_screen_shot(url, filename) {
@@ -27,7 +28,8 @@ async function take_screen_shot(url, filename) {
   await page.goto(url);
   await page.waitForNavigation({waitUntil:'networkidle2', timeout: 30000})
             .catch(e => console.log('timeout exceed. proceed to next operation'))
-  return page.screenshot({path: global.result_dir + '/' + filename, fullPage: true});
+  await page.screenshot({path: global.result_dir + '/' + filename, fullPage: true});
+  return page.close()
 };
 
 async function diff(filename) {
