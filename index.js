@@ -59,9 +59,9 @@ function take_all_screen_shot() {
       .then(async (content) => {
         var url_info_list = content.url_info_list
 
-        await Promise.all( url_info_list.map(async (url_info) => {
+        for(const url_info of url_info_list) {
           await take_screen_shot(url_info.url, url_info.filename);
-        }));
+        }
 
         await global.browser.close();
 
