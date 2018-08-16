@@ -1,7 +1,7 @@
 # About capture_the_paiza
 
 
-# bulding
+# build
 ```
 yarn run pack
 ```
